@@ -11,10 +11,11 @@ import 'home.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-   SharedPreferences prefs = await SharedPreferences.getInstance();
+  SharedPreferences prefs = await SharedPreferences.getInstance();
   var key = prefs.getString('usagekey');
-  
-  runApp(ChangeNotifierProvider(
+
+  runApp(
+    ChangeNotifierProvider(
       create: (_) => ThemeChanger(),
       child: Consumer<ThemeChanger>(
         builder: (context, ThemeChanger notifier, child) {
@@ -26,7 +27,8 @@ Future<void> main() async {
           );
         },
       ),
-    ),);
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -38,8 +40,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home:Home(),
+      home: Home(),
     );
   }
 }
-

@@ -10,7 +10,7 @@ class OnboardingScreen extends StatefulWidget {
 }
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
-  final int _numPages = 4;
+  final int _numPages = 3;
   final PageController _pageController = PageController(initialPage: 0);
   int _currentPage = 0;
 
@@ -50,6 +50,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var _height = MediaQuery.of(context).size.height * 0.4;
+    var _width = MediaQuery.of(context).size.width * 0.7;
     return Scaffold(
       body: SafeArea(
         child: Container(
@@ -67,10 +69,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             ),
           ),
           child: Padding(
-            padding: EdgeInsets.symmetric(vertical: 5.0),
+            padding: EdgeInsets.symmetric(vertical: 5.0, horizontal: 8),
             child: ListView(
               children: <Widget>[
                 Container(
+                  padding: EdgeInsets.only(top: 5),
                   alignment: Alignment.centerRight,
                   child: ElevatedButton(
                     onPressed: () {
@@ -81,6 +84,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         _currentPage = 3;
                       });
                     },
+                    style: ElevatedButton.styleFrom(
+                      padding: EdgeInsets.all(15),
+                      primary: Theme.of(context).primaryColor,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20)),
+                    ),
                     child: Text(
                       'Skip',
                       style: TextStyle(
@@ -91,9 +100,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   ),
                 ),
                 Container(
-                  height: 450.0,
+                  height: MediaQuery.of(context).size.height * 0.7,
                   child: PageView(
-                    // physics: ClampingScrollPhysics(),
+                    physics: ClampingScrollPhysics(),
                     controller: _pageController,
                     onPageChanged: (int page) {
                       setState(() {
@@ -101,50 +110,23 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       });
                     },
                     children: <Widget>[
-                      Padding(
-                        padding: EdgeInsets.all(15.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            // Center(
-                            //   child: Image(
-                            //     image: AssetImage(
-                            //       'assets/images/completing.png',
-                            //     ),
-                            //     height: 200.0,
-                            //     // width: 200.0,
-                            //   ),
-                            // ),
-                            SizedBox(height: 20.0),
-                            Text(
-                              'Connect people\naround the world',
-                              style: kTitleStyle,
-                            ),
-                            SizedBox(height: 15.0),
-                            Text(
-                              'Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod tempor incididunt ut labore et.',
-                              style: kSubtitleStyle,
-                            ),
-                          ],
-                        ),
-                      ),
+                      
                       Padding(
                         padding: EdgeInsets.all(20.0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            // Center(
-                            //   child: Image(
-                            //     image: AssetImage(
-                            //       'assets/images/completing.png',
-                            //     ),
-                            //     height: 200.0,
-                            //     width: 200.0,
-                            //   ),
-                            // ),
+                            Center(
+                              child: Image(
+                                image: AssetImage(
+                                    'assets/images/healthy_lifestyle.png'),
+                                height: _height,
+                                width: _width,
+                              ),
+                            ),
                             SizedBox(height: 30.0),
                             Text(
-                              'Live your life smarter\nwith us!',
+                              'Live a healthy life Sytle\nwith us!',
                               style: kTitleStyle,
                             ),
                             SizedBox(height: 15.0),
@@ -160,18 +142,17 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            // Center(
-                            //   child: Image(
-                            //     image: AssetImage(
-                            //       'assets/images/completing.png',
-                            //     ),
-                            //     height: 200.0,
-                            //     width: 200.0,
-                            //   ),
-                            // ),
+                            Center(
+                              child: Image(
+                                image: AssetImage(
+                                    'assets/images/fitness_tracker.png'),
+                                height: _height,
+                                width: _width,
+                              ),
+                            ),
                             SizedBox(height: 10.0),
                             Text(
-                              'Get a new experience\nof imagination',
+                              'Track Your fitness \nwith us',
                               style: kTitleStyle,
                             ),
                             SizedBox(height: 8.0),
@@ -187,18 +168,17 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            // Center(
-                            //   child: Image(
-                            //     image: AssetImage(
-                            //       'assets/images/Activity_tracker.png',
-                            //     ),
-                            //     height: 200.0,
-                            //     width: 200.0,
-                            //   ),
-                            // ),
+                            Center(
+                              child: Image(
+                                image: AssetImage(
+                                    'assets/images/personal_trainer.png'),
+                                height: _height,
+                                width: _width,
+                              ),
+                            ),
                             SizedBox(height: 10.0),
                             Text(
-                              'Get fresh notification experiences',
+                              'Train with the Best',
                               style: kTitleStyle,
                             ),
                             SizedBox(height: 8.0),
@@ -214,42 +194,54 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: _buildPageIndicator(),
-                ),
-                _currentPage != _numPages - 1
-                    ? SizedBox(
-                        child: Align(
-                          alignment: FractionalOffset.bottomRight,
-                          child: ElevatedButton(
-                            onPressed: () {
-                              _pageController.nextPage(
-                                duration: Duration(milliseconds: 500),
-                                curve: Curves.ease,
-                              );
-                            },
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              mainAxisSize: MainAxisSize.min,
-                              children: <Widget>[
-                                Text(
-                                  'Next',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 22.0,
-                                  ),
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: _buildPageIndicator(),
+                    ),
+                    SizedBox(width: 10),
+                    _currentPage != _numPages - 1
+                        ? SizedBox(
+                            child: Align(
+                              alignment: FractionalOffset.bottomRight,
+                              child: ElevatedButton(
+                                onPressed: () {
+                                  _pageController.nextPage(
+                                    duration: Duration(milliseconds: 500),
+                                    curve: Curves.ease,
+                                  );
+                                },
+                                style: ElevatedButton.styleFrom(
+                                  padding: EdgeInsets.all(15),
+                                  primary: Theme.of(context).primaryColor,
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20)),
                                 ),
-                                SizedBox(width: 10.0),
-                                Icon(
-                                  Icons.arrow_forward,
-                                  color: Colors.white,
-                                  size: 30.0,
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: <Widget>[
+                                    Text(
+                                      'Next',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 22.0,
+                                      ),
+                                    ),
+                                    SizedBox(width: 10.0),
+                                    Icon(
+                                      Icons.arrow_forward,
+                                      color: Colors.white,
+                                      size: 30.0,
+                                    ),
+                                  ],
                                 ),
-                              ],
+                              ),
                             ),
-                          ),
-                        ),
-                      )
-                    : Text(''),
+                          )
+                        : Text(''),
+                  ],
+                )
               ],
             ),
           ),
@@ -259,7 +251,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           ? Container(
               height: 80.0,
               width: double.infinity,
-              color: Colors.white,
+              color: Theme.of(context).primaryColor,
               child: GestureDetector(
                 onTap: () async {
                   Navigator.push(
@@ -276,8 +268,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     child: Text(
                       'Get started',
                       style: TextStyle(
-                        color: Color(0xFF5B16D0),
-                        fontSize: 20.0,
+                        color: Colors.white,
+                        fontSize: 28.0,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
