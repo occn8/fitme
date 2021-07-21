@@ -60,7 +60,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
           selectedColor: Colors.pink,
           todayColor: Colors.blue,
           eventColor: Colors.grey,
-          locale: 'de_DE',
+          locale: 'en_US',
           todayButtonText: 'FitMe Calender',
           isExpanded: true,
           expandableDateFormat: 'EEEE, dd. MMMM yyyy',

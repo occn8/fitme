@@ -2,6 +2,8 @@ import 'package:fitme/calender.dart';
 import 'package:fitme/timer.dart';
 import 'package:flutter/material.dart';
 
+import 'home.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -15,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home:CalendarScreen(),
+      home:Home(),
     );
   }
 }
