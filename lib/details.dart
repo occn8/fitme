@@ -62,10 +62,67 @@ class Details extends StatelessWidget {
               ),
             ),
             Container(
-              child: Image(
-                image: AssetImage('${workout.imgUrl}'),
-                height: MediaQuery.of(context).size.height * 0.4,
-                width: MediaQuery.of(context).size.width * 0.7,
+              height: MediaQuery.of(context).size.height * 0.4,
+              width: MediaQuery.of(context).size.width * 1,
+              child: Stack(
+                children: [
+                  Align(
+                    alignment: Alignment.topRight,
+                    child: Container(
+                      width: 100,
+                      height: 100,
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.amber, width: 3),
+                        shape: BoxShape.circle,
+                      ),
+                      child: Container(
+                        width: double.infinity,
+                        height: double.infinity,
+                        decoration: BoxDecoration(
+                            color: Colors.transparent,
+                            shape: BoxShape.circle,
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black12,
+                                offset: Offset(0, 5.0),
+                                blurRadius: 5.0,
+                              ),
+                            ]),
+                      ),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.center,
+                    child: Container(
+                      width: 200,
+                      height: 200,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Theme.of(context).primaryColor, width: 3),
+                        shape: BoxShape.circle,
+                      ),
+                      child: Container(
+                        width: double.infinity,
+                        height: double.infinity,
+                        decoration: BoxDecoration(
+                            color: Colors.transparent,
+                            shape: BoxShape.circle,
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black12,
+                                offset: Offset(0, 5.0),
+                                blurRadius: 5.0,
+                              ),
+                            ]),
+                      ),
+                    ),
+                  ),
+                  Image(
+                    image: AssetImage('${workout.imgUrl}'),
+                    height: MediaQuery.of(context).size.height * 1,
+                    width: MediaQuery.of(context).size.width * 1,
+                  ),
+                ],
               ),
             ),
             Container(
@@ -83,9 +140,16 @@ class Details extends StatelessWidget {
                     child: Text(
                       '${workout.title}',
                       style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 25,
                           fontWeight: FontWeight.w800,
                           color: Theme.of(context).primaryColor),
+                    ),
+                  ),
+                  SizedBox(height: 8),
+                  Text(
+                    'Description',
+                    style: TextStyle(
+                      color: Theme.of(context).primaryColor,
                     ),
                   ),
                   SizedBox(height: 8),
@@ -97,12 +161,17 @@ class Details extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 20),
+                  Text(
+                    'Procedures',
+                    style: TextStyle(
+                      color: Theme.of(context).primaryColor,
+                    ),
+                  ),
                   Container(
                     padding: EdgeInsets.all(8),
                     decoration: BoxDecoration(
-                      color: Theme.of(context).backgroundColor,
-                      borderRadius: BorderRadius.circular(10)
-                    ),
+                        color: Theme.of(context).backgroundColor,
+                        borderRadius: BorderRadius.circular(10)),
                     child: Text(
                       '${workout.procedure}',
                       style: TextStyle(

@@ -24,37 +24,37 @@ class _HomeState extends State<Home> {
       value: SystemUiOverlayStyle.light,
       child: Scaffold(
         appBar: AppBar(
-          leading: Builder(
-            builder: (context) => InkWell(
-              splashColor: Theme.of(context).accentColor,
-              borderRadius: BorderRadius.circular(10),
-              onTap: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (ctx) => Calendar()));
-              },
-              child: Container(
-                padding: new EdgeInsets.all(8),
-                decoration: BoxDecoration(
-                    // color: Theme.of(context).cardColor,
-                    borderRadius: BorderRadius.circular(10)),
-                child: new Icon(Icons.calendar_today,
-                    size: 25, color: Theme.of(context).primaryColorDark),
-              ),
-            ),
-          ),
+          // leading: Builder(
+          //   builder: (context) => InkWell(
+          //     splashColor: Theme.of(context).accentColor,
+          //     borderRadius: BorderRadius.circular(10),
+          //     onTap: () {
+          //       Navigator.push(
+          //           context, MaterialPageRoute(builder: (ctx) => Calendar()));
+          //     },
+          //     child: Container(
+          //       padding: new EdgeInsets.all(8),
+          //       decoration: BoxDecoration(
+          //           // color: Theme.of(context).cardColor,
+          //           borderRadius: BorderRadius.circular(10)),
+          //       child: new Icon(Icons.calendar_today,
+          //           size: 25, color: Theme.of(context).primaryColorDark),
+          //     ),
+          //   ),
+          // ),
           title: RichText(
             text: TextSpan(
                 children: [
                   TextSpan(
                       text: 'Fit',
                       style: TextStyle(
-                          fontSize: 24,
+                          fontSize: 35,
                           fontWeight: FontWeight.w800,
                           color: Colors.orange[800])),
                   TextSpan(text: 'Me '),
                 ],
                 style: TextStyle(
-                    fontSize: 20,
+                    fontSize: 30,
                     fontWeight: FontWeight.w500,
                     color: Colors.blueGrey)),
           ),
@@ -70,7 +70,7 @@ class _HomeState extends State<Home> {
                       context, MaterialPageRoute(builder: (ctx) => Timer()));
                 },
                 child: Container(
-                  padding: new EdgeInsets.all(8),
+                  padding: new EdgeInsets.all(15),
                   decoration: BoxDecoration(
                       // color: Theme.of(context).cardColor,
                       borderRadius: BorderRadius.circular(10)),
@@ -88,7 +88,7 @@ class _HomeState extends State<Home> {
                       context, MaterialPageRoute(builder: (ctx) => Settings()));
                 },
                 child: Container(
-                  padding: new EdgeInsets.all(8),
+                  padding: new EdgeInsets.all(15),
                   decoration: BoxDecoration(
                       // color: Theme.of(context).cardColor,
                       borderRadius: BorderRadius.circular(10)),
@@ -173,6 +173,120 @@ class WorkOutItem extends StatelessWidget {
                       fontSize: 25,
                       fontWeight: FontWeight.w500,
                       color: Theme.of(context).primaryColorDark),
+                ),
+              ),
+            ),
+            Align(
+              alignment: Alignment.bottomLeft,
+              child: Container(
+                height: 40,
+                padding: EdgeInsets.only(left: 5),
+                width: MediaQuery.of(context).size.width * 0.45,
+                child: Row(
+                  children: [
+                    Column(
+                      children: [
+                        Icon(
+                          Icons.timer,
+                          size: 18,
+                          color: Theme.of(context).primaryColor,
+                        ),
+                        Text(
+                          '45m',
+                          style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                              color: Theme.of(context).primaryColorDark),
+                        ),
+                      ],
+                    ),
+                    SizedBox(width: 8),
+                    Column(
+                      children: [
+                        Icon(
+                          Icons.replay_circle_filled,
+                          size: 18,
+                          color: Theme.of(context).primaryColor,
+                        ),
+                        Text(
+                          'reps',
+                          style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                              color: Theme.of(context).primaryColorDark),
+                        ),
+                      ],
+                    ),
+                    SizedBox(width: 8),
+                    Column(
+                      children: [
+                        Icon(
+                          Icons.power,
+                          size: 18,
+                          color: Theme.of(context).primaryColor,
+                        ),
+                        Text(
+                          'Sets',
+                          style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                              color: Theme.of(context).primaryColorDark),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Align(
+              alignment: Alignment.topRight,
+              child: Container(
+                width: 14,
+                height: 14,
+                decoration: BoxDecoration(
+                  border: Border.all(
+                      color: Theme.of(context).primaryColor, width: 3),
+                  shape: BoxShape.circle,
+                ),
+                child: Container(
+                  width: double.infinity,
+                  height: double.infinity,
+                  decoration: BoxDecoration(
+                      color: Colors.transparent,
+                      shape: BoxShape.circle,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black12,
+                          offset: Offset(0, 5.0),
+                          blurRadius: 5.0,
+                        ),
+                      ]),
+                ),
+              ),
+            ),
+            Align(
+              alignment: Alignment.center,
+              child: Container(
+                width: 14,
+                height: 14,
+                decoration: BoxDecoration(
+                  border: Border.all(
+                      color: Colors.amber, width: 3),
+                  shape: BoxShape.circle,
+                ),
+                child: Container(
+                  width: double.infinity,
+                  height: double.infinity,
+                  decoration: BoxDecoration(
+                      color: Colors.transparent,
+                      shape: BoxShape.circle,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black12,
+                          offset: Offset(0, 5.0),
+                          blurRadius: 5.0,
+                        ),
+                      ]),
                 ),
               ),
             ),
