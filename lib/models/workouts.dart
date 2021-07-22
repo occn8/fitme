@@ -13,7 +13,7 @@ List<WorkOutModel> workouts = [
   WorkOutModel(
       title: 'The plank',
       description: 'works out the whole body',
-      procedure: 'one two three',
+      procedure: 'one two  two\n three',
       imgUrl: 'assets/images/img1.png'),
   WorkOutModel(
       title: 'The sit ups',
@@ -23,7 +23,7 @@ List<WorkOutModel> workouts = [
   WorkOutModel(
       title: 'The plank',
       description: 'works out the whole body',
-      procedure: 'one two three',
+      procedure: 'one two\n three',
       imgUrl: 'assets/images/img3.png'),
   WorkOutModel(
       title: 'The other',
