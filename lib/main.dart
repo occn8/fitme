@@ -16,12 +16,12 @@ Future<void> main() async {
 
   runApp(
     ChangeNotifierProvider(
-      create: (_) => ThemeChanger(),
+      create: (_) => new ThemeChanger(),
       child: Consumer<ThemeChanger>(
         builder: (context, ThemeChanger notifier, child) {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
-            title: 'Draft-IT',
+            title: 'FitMe',
             theme: notifier.themeData,
             home: key == null ? OnboardingScreen() : Home(),
           );
