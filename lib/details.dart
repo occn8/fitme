@@ -35,6 +35,10 @@ class Details extends StatelessWidget {
                       ),
                     ),
                   ),
+                  Text(
+                    'Detail',
+                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.w800),
+                  ),
                   Builder(
                     builder: (context) => InkWell(
                       splashColor: Theme.of(context).accentColor,

@@ -5,6 +5,7 @@ import 'package:fitme/themes/light.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fitme/provider/themeprovider.dart';
+import 'package:flutter_neat_and_clean_calendar/flutter_neat_and_clean_calendar.dart';
 
 class Home extends StatefulWidget {
   Home({Key? key}) : super(key: key);
@@ -23,6 +24,24 @@ class _HomeState extends State<Home> {
       value: SystemUiOverlayStyle.light,
       child: Scaffold(
         appBar: AppBar(
+          leading: Builder(
+            builder: (context) => InkWell(
+              splashColor: Theme.of(context).accentColor,
+              borderRadius: BorderRadius.circular(10),
+              onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (ctx) => Calendar()));
+              },
+              child: Container(
+                padding: new EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                    // color: Theme.of(context).cardColor,
+                    borderRadius: BorderRadius.circular(10)),
+                child: new Icon(Icons.calendar_today,
+                    size: 25, color: Theme.of(context).primaryColorDark),
+              ),
+            ),
+          ),
           title: RichText(
             text: TextSpan(
                 children: [

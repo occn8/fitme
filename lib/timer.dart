@@ -11,7 +11,7 @@ class Timer extends StatefulWidget {
 class _TimerState extends State<Timer> {
   CountDownController _controller = CountDownController();
   int _duration = 10;
-
+  TextStyle style1 = TextStyle(fontWeight: FontWeight.bold, fontSize: 16);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -87,19 +87,32 @@ class _TimerState extends State<Timer> {
                   borderRadius: BorderRadius.circular(10)),
               child: Column(
                 children: [
-                  Text('Current Duration : ${_duration}'),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text('Current Duration :'),
+                      Text(
+                        ' ${_duration}',
+                        style: style1,
+                      ),
+                    ],
+                  ),
                   SizedBox(height: 8),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       ElevatedButton(
                         child: Row(
-                          children: [Text('Reduce '), Icon(Icons.remove)],
+                          children: [
+                            Text('Reduce '),
+                            Icon(Icons.remove),
+                            Text('10',style: style1,),
+                          ],
                         ),
                         style: ElevatedButton.styleFrom(
                             primary: Theme.of(context).primaryColor),
                         onPressed: () {
-                          _duration==10? _duration==10 :_duration -= 10;
+                          _duration == 10 ? _duration == 10 : _duration -= 10;
                           setState(() {
                             _controller.restart(duration: _duration);
                           });
@@ -110,7 +123,7 @@ class _TimerState extends State<Timer> {
                           children: [
                             Text('Add '),
                             Icon(Icons.add),
-                            Text('10'),
+                            Text('10',style: style1,),
                           ],
                         ),
                         style: ElevatedButton.styleFrom(
@@ -157,7 +170,7 @@ class _TimerState extends State<Timer> {
         child: ElevatedButton(
       child: Text(
         title,
-        style: TextStyle(color: Theme.of(context).primaryColorDark),
+        style: TextStyle(),
       ),
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(primary: Theme.of(context).primaryColor),
