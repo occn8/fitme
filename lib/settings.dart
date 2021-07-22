@@ -51,7 +51,10 @@ class _SettingsState extends State<Settings> {
             ),
             SizedBox(height: 15),
             Card(
-              child: SwitchListTile(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20)),
+              child: SwitchListTile(activeColor:Theme.of(context).primaryColor,
+                contentPadding: EdgeInsets.all(5),
                 title: Text('Notifications'),
                 value: _val,
                 onChanged: (bool value) {
@@ -64,12 +67,15 @@ class _SettingsState extends State<Settings> {
             Container(
               child: Consumer<ThemeChanger>(
                 builder: (context, notifier, child) => Card(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20)),
                   child: ListTile(
-                    leading: Icon(Icons.brightness_4),
+                    contentPadding: EdgeInsets.all(5),
+                    leading: Icon(Icons.brightness_4,color: Theme.of(context).primaryColor,),
                     title: Text('Theme'),
                     trailing: Icon(
                       Icons.arrow_forward_ios,
-                      size: 18,
+                      size: 18,color: Theme.of(context).primaryColor,
                     ),
                     onTap: () => themer(context),
                   ),
@@ -77,34 +83,43 @@ class _SettingsState extends State<Settings> {
               ),
             ),
             Card(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20)),
               child: ListTile(
-                leading: Icon(Icons.security),
+                contentPadding: EdgeInsets.all(5),
+                leading: Icon(Icons.security,color: Theme.of(context).primaryColor,),
                 title: Text('Security'),
                 trailing: Icon(
                   Icons.arrow_forward_ios,
-                  size: 18,
+                  size: 18,color: Theme.of(context).primaryColor,
                 ),
                 onTap: () {},
               ),
             ),
             Card(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20)),
               child: ListTile(
-                leading: Icon(Icons.help),
+                contentPadding: EdgeInsets.all(5),
+                leading: Icon(Icons.help,color: Theme.of(context).primaryColor,),
                 title: Text('Support | Contacts'),
                 trailing: Icon(
                   Icons.arrow_forward_ios,
-                  size: 18,
+                  size: 18,color: Theme.of(context).primaryColor,
                 ),
                 onTap: () {},
               ),
             ),
             Card(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20)),
               child: ListTile(
-                leading: Icon(Icons.info),
+                contentPadding: EdgeInsets.all(5),
+                leading: Icon(Icons.info,color: Theme.of(context).primaryColor,),
                 title: Text('About'),
                 trailing: Icon(
                   Icons.arrow_forward_ios,
-                  size: 18,
+                  size: 18,color: Theme.of(context).primaryColor,
                 ),
                 onTap: () {},
               ),

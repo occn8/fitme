@@ -16,7 +16,7 @@ Future<void> main() async {
 
   runApp(
     ChangeNotifierProvider(
-      create: (_) => new ThemeChanger(),
+      create: (_) => ThemeChanger(),
       child: Consumer<ThemeChanger>(
         builder: (context, ThemeChanger notifier, child) {
           return MaterialApp(

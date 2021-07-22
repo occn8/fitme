@@ -44,8 +44,8 @@ class Details extends StatelessWidget {
                       splashColor: Theme.of(context).accentColor,
                       borderRadius: BorderRadius.circular(10),
                       onTap: () {
-                        Navigator.push(
-                      context, MaterialPageRoute(builder: (ctx) => Timer()));
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (ctx) => Timer()));
                       },
                       child: Container(
                         padding: new EdgeInsets.all(8),
@@ -83,7 +83,7 @@ class Details extends StatelessWidget {
                     child: Text(
                       '${workout.title}',
                       style: TextStyle(
-                          fontSize: 16,
+                          fontSize: 20,
                           fontWeight: FontWeight.w800,
                           color: Theme.of(context).primaryColor),
                     ),
@@ -93,12 +93,21 @@ class Details extends StatelessWidget {
                     '${workout.description}',
                     style: TextStyle(
                       fontSize: 16,
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
-                  Text(
-                    '${workout.procedure}',
-                    style: TextStyle(
-                      fontSize: 16,
+                  SizedBox(height: 20),
+                  Container(
+                    padding: EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).backgroundColor,
+                      borderRadius: BorderRadius.circular(10)
+                    ),
+                    child: Text(
+                      '${workout.procedure}',
+                      style: TextStyle(
+                        fontSize: 16,
+                      ),
                     ),
                   ),
                 ],

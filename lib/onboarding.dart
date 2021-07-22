@@ -41,7 +41,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         height: 8.0,
         width: isActive ? 24.0 : 16.0,
         decoration: BoxDecoration(
-          color: isActive ? Colors.white : Color(0xFF7B51D3),
+          color: isActive ? Colors.amber : Color(0xFF7B51D3),
           borderRadius: BorderRadius.all(Radius.circular(12)),
         ),
       ),
@@ -52,23 +52,24 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   Widget build(BuildContext context) {
     var _height = MediaQuery.of(context).size.height * 0.4;
     var _width = MediaQuery.of(context).size.width * 0.7;
-    
+
     return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: SystemUiOverlayStyle.light,
+      value: SystemUiOverlayStyle.dark,
       child: Scaffold(
         body: Container(
           decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              stops: [0.1, 0.4, 0.7, 0.9],
-              colors: [
-                Color(0xFF322c42),
-                Color(0xFF30293c),
-                Color(0xFF2e273a),
-                Color(0xFF292533),
-              ],
-            ),
+            color: Theme.of(context).scaffoldBackgroundColor,
+            // gradient: LinearGradient(
+            //   begin: Alignment.topCenter,
+            //   end: Alignment.bottomCenter,
+            //   stops: [0.1, 0.4, 0.7, 0.9],
+            //   colors: [
+            //     Color(0xFF322c42),
+            //     Color(0xFF30293c),
+            //     Color(0xff6c005a),
+            //     Color(0xFF5b074a),
+            //   ],
+            // ),
           ),
           child: SafeArea(
             child: Padding(
@@ -78,29 +79,31 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   Container(
                     padding: EdgeInsets.only(top: 5),
                     alignment: Alignment.centerRight,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        _pageController.animateToPage(3,
-                            duration: Duration(milliseconds: 300),
-                            curve: Curves.bounceIn);
-                        setState(() {
-                          _currentPage = 3;
-                        });
-                      },
-                      style: ElevatedButton.styleFrom(
-                        padding: EdgeInsets.all(15),
-                        primary: Theme.of(context).primaryColor,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20)),
-                      ),
-                      child: Text(
-                        'Skip',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18.0,
-                        ),
-                      ),
-                    ),
+                    child: _currentPage != _numPages - 1
+                        ? ElevatedButton(
+                            onPressed: () {
+                              _pageController.animateToPage(3,
+                                  duration: Duration(milliseconds: 300),
+                                  curve: Curves.bounceIn);
+                              setState(() {
+                                _currentPage = 3;
+                              });
+                            },
+                            style: ElevatedButton.styleFrom(
+                              padding: EdgeInsets.all(15),
+                              primary: Theme.of(context).primaryColor,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20)),
+                            ),
+                            child: Text(
+                              'Skip',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18.0,
+                              ),
+                            ),
+                          )
+                        : null,
                   ),
                   Container(
                     height: MediaQuery.of(context).size.height * 0.7,
@@ -129,12 +132,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                               SizedBox(height: 30.0),
                               Text(
                                 'Live a healthy life Sytle\nwith us!',
-                                style: kTitleStyle,
+                                style: titleTextStyle(context),
                               ),
                               SizedBox(height: 15.0),
                               Text(
                                 'Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod tempor incididunt ut labore et.',
-                                style: kSubtitleStyle,
+                                style: subtitleTextStyle(context),
                               ),
                             ],
                           ),
@@ -155,12 +158,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                               SizedBox(height: 10.0),
                               Text(
                                 'Track Your fitness \nwith us',
-                                style: kTitleStyle,
+                                style: titleTextStyle(context),
                               ),
                               SizedBox(height: 8.0),
                               Text(
                                 'Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod tempor incididunt ut labore et.',
-                                style: kSubtitleStyle,
+                                style: subtitleTextStyle(context),
                               ),
                             ],
                           ),
@@ -181,12 +184,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                               SizedBox(height: 10.0),
                               Text(
                                 'Train with the Best',
-                                style: kTitleStyle,
+                                style: titleTextStyle(context),
                               ),
                               SizedBox(height: 8.0),
                               Text(
                                 'Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod tempor incididunt ut labore et.',
-                                style: kSubtitleStyle,
+                                style: subtitleTextStyle(context),
                               ),
                             ],
                           ),
@@ -217,7 +220,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                     padding: EdgeInsets.all(15),
                                     primary: Theme.of(context).primaryColor,
                                     shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(20)),
+                                        borderRadius:
+                                            BorderRadius.circular(20)),
                                   ),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -283,17 +287,21 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       ),
     );
   }
+
+  TextStyle titleTextStyle(BuildContext context) {
+    return TextStyle(
+      color: Theme.of(context).primaryColorDark,
+      fontFamily: 'Gilroy',
+      fontSize: 18.0,
+      height: 1.5,
+    );
+  }
+
+  TextStyle subtitleTextStyle(BuildContext context) {
+    return TextStyle(
+      color: Theme.of(context).primaryColorDark,
+      fontSize: 14.0,
+      height: 1.2,
+    );
+  }
 }
-
-final kTitleStyle = TextStyle(
-  color: Colors.white,
-  fontFamily: 'Gilroy',
-  fontSize: 18.0,
-  height: 1.5,
-);
-
-final kSubtitleStyle = TextStyle(
-  color: Colors.white,
-  fontSize: 14.0,
-  height: 1.2,
-);
