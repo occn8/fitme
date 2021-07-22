@@ -140,7 +140,7 @@ class Details extends StatelessWidget {
                     child: Text(
                       '${workout.title}',
                       style: TextStyle(
-                          fontSize: 25,
+                          fontSize: 28,
                           fontWeight: FontWeight.w800,
                           color: Theme.of(context).primaryColor),
                     ),

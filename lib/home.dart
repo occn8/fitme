@@ -265,10 +265,10 @@ class WorkOutItem extends StatelessWidget {
               ),
             ),
             Align(
-              alignment: Alignment.center,
+              alignment: Alignment.centerRight,
               child: Container(
-                width: 14,
-                height: 14,
+                width: 100,
+                height: 100,
                 decoration: BoxDecoration(
                   border: Border.all(
                       color: Colors.amber, width: 3),

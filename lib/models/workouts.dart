@@ -58,12 +58,12 @@ List<WorkOutModel> workouts = [
           'The glute bridge effectively works your entire posterior chain, which isn’t only good for you, but it will make your booty look perkier as well.',
       procedure:
           "1.Start by lying on the floor with your knees bent, feet flat on the ground, and arms straight at your sides with your palms facing down. \n\n 2.Pushing through your heels, raise your hips off the ground by squeezing your core, glutes, and hamstrings. Your upper back and shoulders should still be in contact with the ground, and your core down to your knees should form a straight line. \n\n 3.Pause 1–2 seconds at the top and return to the starting position.\n\n 4.Complete 10–12 reps for 3 sets.",
-      imgUrl: 'assets/images/img2.png'),
+      imgUrl: 'assets/images/img4.png'),
   WorkOutModel(
       title: 'Planks',
       description:
           'Planks are an effective way to target both your abdominal muscles and your whole body. Planking stabilizes your core without straining your back the way situps or crunches might.',
       procedure:
           "1.Begin in a pushup position with your hand and toes firmly planted on the ground, your back straight, and your core tight.\n\n 2.Keep your chin slightly tucked and your gaze just in front of your hands.\n\n 3.Take deep controlled breaths while maintaining tension throughout your entire body, so your abs, shoulders, triceps, glutes and quads are all engaged.\n\n 4.Complete 2-3 sets of 30 second holds to start.",
-      imgUrl: 'assets/images/img2.png'),
+      imgUrl: 'assets/images/img3.png'),
 ];
