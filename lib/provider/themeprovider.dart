@@ -1,18 +1,14 @@
 
 import 'package:fitme/themes/dark.dart';
 import 'package:fitme/themes/light.dart';
-import 'package:fitme/themes/mid_night.dart';
-import 'package:fitme/themes/night.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-enum Themes { Light, Night, MidNight, Dark }
+enum Themes { Light, Dark }
 
 final themesData = {
   Themes.Light: light,
-  Themes.Night: night,
-  Themes.MidNight: midnight,
   Themes.Dark: dark
 };
 
@@ -38,7 +34,7 @@ class ThemeChanger with ChangeNotifier {
 
   ThemeData get themeData {
     if (_themeData == null) {
-      _themeData = themesData[Themes.Light]!;
+      _themeData = themesData[Themes.Dark]!;
     }
     return _themeData;
   }
@@ -60,7 +56,7 @@ Future<String?> themer(BuildContext context) {
       title: Text('Choose Theme'),
       children: <Widget>[
         Container(
-          height: 200,
+          height: 100,
           padding: EdgeInsets.symmetric(horizontal: 5),
           child: ListView.builder(
             itemCount: Themes.values.length,

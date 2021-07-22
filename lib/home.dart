@@ -20,7 +20,7 @@ class _HomeState extends State<Home> {
     var _width = MediaQuery.of(context).size.width * 0.5;
 
     return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: SystemUiOverlayStyle.dark,
+      value: SystemUiOverlayStyle.light,
       child: Scaffold(
         appBar: AppBar(
           title: RichText(
@@ -39,6 +39,7 @@ class _HomeState extends State<Home> {
                     fontWeight: FontWeight.w500,
                     color: Colors.blueGrey)),
           ),
+          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
           centerTitle: true,
           actions: [
             Builder(
@@ -102,6 +103,7 @@ class WorkOutItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      borderRadius: BorderRadius.circular(10),
       onTap: () {
         Navigator.push(
           context,
@@ -116,13 +118,16 @@ class WorkOutItem extends StatelessWidget {
         padding: EdgeInsets.all(5),
         margin: EdgeInsets.all(5),
         decoration: BoxDecoration(
-            color: Color(0xffdef2f8), borderRadius: BorderRadius.circular(10)),
+          color: Theme.of(context).cardColor,
+          borderRadius: BorderRadius.circular(10),
+        ),
         child: Stack(
           children: [
             Align(
               // top: MediaQuery.of(context).size.height * 0.2 / 2.5,
               alignment: Alignment.centerLeft,
               child: Container(
+                padding: EdgeInsets.only(left: 5),
                 width: MediaQuery.of(context).size.width * 0.45,
                 child: Text(
                   title,
@@ -130,7 +135,7 @@ class WorkOutItem extends StatelessWidget {
                   style: TextStyle(
                       fontSize: 25,
                       fontWeight: FontWeight.w500,
-                      color: Colors.blueGrey),
+                      color: Theme.of(context).primaryColorDark),
                 ),
               ),
             ),
