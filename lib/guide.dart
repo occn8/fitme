@@ -86,7 +86,7 @@ class _GuideScreenState extends State<GuideScreen> {
                               Center(
                                 child: Image(
                                   image: AssetImage(
-                                      'assets/images/healthy_lifestyle.png'),
+                                      'assets/images/working_out.png'),
                                   height: _height,
                                   width: _width,
                                 ),
