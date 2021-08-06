@@ -11,34 +11,40 @@ class _NutritionState extends State<Nutrition> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: Text('Nutritius Foods'),centerTitle: true,),
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 8, vertical: 5),
         child: ListView.builder(
             itemCount: nutriList.length,
             scrollDirection: Axis.vertical,
             itemBuilder: (BuildContext context, int index) {
-              
+
               NutriModel nutri = nutriList[index];
               return Container(
+                padding: EdgeInsets.all(5),
                 child: Card(
-                  child: Column(
-                    children: [
-                      Text(
-                        '${nutri.name}',
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w500,
-                          color: Theme.of(context).primaryColor,
+                  child: Padding(
+                    padding: const EdgeInsets.all(15),
+                    child: Column(
+                      children: [
+                        Text(
+                          '${nutri.name}',
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w500,
+                            color: Theme.of(context).primaryColor,
+                          ),
                         ),
-                      ),
-                      Text(
-                        '${nutri.description}',
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: Theme.of(context).primaryColorDark,
+                        SizedBox(height:8),
+                        Text(
+                          '${nutri.description}',
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: Theme.of(context).primaryColorDark,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               );

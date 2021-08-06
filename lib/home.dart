@@ -1,5 +1,6 @@
 import 'package:fitme/details.dart';
 import 'package:fitme/models/workouts.dart';
+import 'package:fitme/nutrition.dart';
 import 'package:fitme/settings.dart';
 import 'package:fitme/timer.dart';
 import 'package:flutter/material.dart';
@@ -22,24 +23,24 @@ class _HomeState extends State<Home> {
       value: SystemUiOverlayStyle.light,
       child: Scaffold(
         appBar: AppBar(
-          // leading: Builder(
-          //   builder: (context) => InkWell(
-          //     splashColor: Theme.of(context).accentColor,
-          //     borderRadius: BorderRadius.circular(10),
-          //     onTap: () {
-          //       Navigator.push(
-          //           context, MaterialPageRoute(builder: (ctx) => Calendar()));
-          //     },
-          //     child: Container(
-          //       padding: new EdgeInsets.all(8),
-          //       decoration: BoxDecoration(
-          //           // color: Theme.of(context).cardColor,
-          //           borderRadius: BorderRadius.circular(10)),
-          //       child: new Icon(Icons.calendar_today,
-          //           size: 25, color: Theme.of(context).primaryColorDark),
-          //     ),
-          //   ),
-          // ),
+          leading: Builder(
+            builder: (context) => InkWell(
+              splashColor: Theme.of(context).accentColor,
+              borderRadius: BorderRadius.circular(10),
+              onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (ctx) => Nutrition()));
+              },
+              child: Container(
+                padding: new EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                    // color: Theme.of(context).cardColor,
+                    borderRadius: BorderRadius.circular(10)),
+                child: new Icon(Icons.fastfood,
+                    size: 30, color: Theme.of(context).primaryColor),
+              ),
+            ),
+          ),
           title: RichText(
             text: TextSpan(
                 children: [
@@ -73,7 +74,7 @@ class _HomeState extends State<Home> {
                       // color: Theme.of(context).cardColor,
                       borderRadius: BorderRadius.circular(10)),
                   child: new Icon(Icons.timer,
-                      size: 25, color: Theme.of(context).primaryColorDark),
+                      size: 30, color: Theme.of(context).primaryColor),
                 ),
               ),
             ),
@@ -91,7 +92,7 @@ class _HomeState extends State<Home> {
                       // color: Theme.of(context).cardColor,
                       borderRadius: BorderRadius.circular(10)),
                   child: new Icon(Icons.settings,
-                      size: 25, color: Theme.of(context).primaryColorDark),
+                      size: 30, color: Theme.of(context).primaryColor),
                 ),
               ),
             ),

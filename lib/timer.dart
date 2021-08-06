@@ -58,7 +58,7 @@ class _TimerState extends State<Timer> {
               height: MediaQuery.of(context).size.height / 1.7,
               ringColor: Colors.grey[300]!,
               ringGradient: null,
-              fillColor: Colors.amber,
+              fillColor: Theme.of(context).primaryColor,
               fillGradient: null,
               backgroundColor: Theme.of(context).cardColor,
               backgroundGradient: null,

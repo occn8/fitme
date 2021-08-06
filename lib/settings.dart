@@ -1,3 +1,5 @@
+import 'package:fitme/about.dart';
+import 'package:fitme/contact.dart';
 import 'package:fitme/provider/themeprovider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -53,7 +55,8 @@ class _SettingsState extends State<Settings> {
             Card(
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20)),
-              child: SwitchListTile(activeColor:Theme.of(context).primaryColor,
+              child: SwitchListTile(
+                activeColor: Theme.of(context).primaryColor,
                 contentPadding: EdgeInsets.all(5),
                 title: Text('Notifications'),
                 value: _val,
@@ -71,11 +74,15 @@ class _SettingsState extends State<Settings> {
                       borderRadius: BorderRadius.circular(20)),
                   child: ListTile(
                     contentPadding: EdgeInsets.all(5),
-                    leading: Icon(Icons.brightness_4,color: Theme.of(context).primaryColor,),
+                    leading: Icon(
+                      Icons.brightness_4,
+                      color: Theme.of(context).primaryColor,
+                    ),
                     title: Text('Theme'),
                     trailing: Icon(
                       Icons.arrow_forward_ios,
-                      size: 18,color: Theme.of(context).primaryColor,
+                      size: 18,
+                      color: Theme.of(context).primaryColor,
                     ),
                     onTap: () => themer(context),
                   ),
@@ -87,11 +94,15 @@ class _SettingsState extends State<Settings> {
                   borderRadius: BorderRadius.circular(20)),
               child: ListTile(
                 contentPadding: EdgeInsets.all(5),
-                leading: Icon(Icons.security,color: Theme.of(context).primaryColor,),
+                leading: Icon(
+                  Icons.security,
+                  color: Theme.of(context).primaryColor,
+                ),
                 title: Text('Security'),
                 trailing: Icon(
                   Icons.arrow_forward_ios,
-                  size: 18,color: Theme.of(context).primaryColor,
+                  size: 18,
+                  color: Theme.of(context).primaryColor,
                 ),
                 onTap: () {},
               ),
@@ -101,13 +112,20 @@ class _SettingsState extends State<Settings> {
                   borderRadius: BorderRadius.circular(20)),
               child: ListTile(
                 contentPadding: EdgeInsets.all(5),
-                leading: Icon(Icons.help,color: Theme.of(context).primaryColor,),
+                leading: Icon(
+                  Icons.help,
+                  color: Theme.of(context).primaryColor,
+                ),
                 title: Text('Support | Contacts'),
                 trailing: Icon(
                   Icons.arrow_forward_ios,
-                  size: 18,color: Theme.of(context).primaryColor,
+                  size: 18,
+                  color: Theme.of(context).primaryColor,
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (ctx) => Contacts()));
+                },
               ),
             ),
             Card(
@@ -115,13 +133,20 @@ class _SettingsState extends State<Settings> {
                   borderRadius: BorderRadius.circular(20)),
               child: ListTile(
                 contentPadding: EdgeInsets.all(5),
-                leading: Icon(Icons.info,color: Theme.of(context).primaryColor,),
+                leading: Icon(
+                  Icons.info,
+                  color: Theme.of(context).primaryColor,
+                ),
                 title: Text('About'),
                 trailing: Icon(
                   Icons.arrow_forward_ios,
-                  size: 18,color: Theme.of(context).primaryColor,
+                  size: 18,
+                  color: Theme.of(context).primaryColor,
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (ctx) => About()));
+                },
               ),
             ),
           ],

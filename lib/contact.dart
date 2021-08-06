@@ -1,8 +1,8 @@
 
 import 'package:flutter/material.dart';
 
-class ContactPage extends StatelessWidget {
-  const ContactPage({Key? key}) : super(key: key);
+class Contacts extends StatelessWidget {
+  const Contacts({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class ContactPage extends StatelessWidget {
     );
     return Scaffold(
       appBar: AppBar(
-        title: Text('Contacts'),
+        title: Text('Support | Contacts'),
         centerTitle: true,
       ),
       body: SafeArea(
@@ -28,7 +28,7 @@ class ContactPage extends StatelessWidget {
               SizedBox(height: 10),
               CircleAvatar(
                 radius: 53,
-                child: Image.asset('assets/icons/icon.png',height: 100,),
+                child: Image.asset('assets/icon.png',height: 100,),
               ),
               SizedBox(height: 10),
               Container(
