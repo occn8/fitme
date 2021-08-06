@@ -1,7 +1,5 @@
-import 'package:fitme/calender.dart';
-import 'package:fitme/onboarding.dart';
+import 'package:fitme/guide.dart';
 import 'package:fitme/provider/themeprovider.dart';
-import 'package:fitme/timer.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -23,7 +21,7 @@ Future<void> main() async {
             debugShowCheckedModeBanner: false,
             title: 'FitMe',
             theme: notifier.themeData,
-            home: key == null ? OnboardingScreen() : Home(),
+            home: key == null ? GuideScreen() : Home(),
           );
         },
       ),

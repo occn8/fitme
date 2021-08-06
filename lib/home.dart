@@ -1,11 +1,9 @@
 import 'package:fitme/details.dart';
 import 'package:fitme/models/workouts.dart';
-import 'package:fitme/provider/themeprovider.dart';
 import 'package:fitme/settings.dart';
 import 'package:fitme/timer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_neat_and_clean_calendar/flutter_neat_and_clean_calendar.dart';
 
 class Home extends StatefulWidget {
   Home({Key? key}) : super(key: key);

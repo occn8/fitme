@@ -4,12 +4,12 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'home.dart';
 
-class OnboardingScreen extends StatefulWidget {
+class GuideScreen extends StatefulWidget {
   @override
-  _OnboardingScreenState createState() => _OnboardingScreenState();
+  _GuideScreenState createState() => _GuideScreenState();
 }
 
-class _OnboardingScreenState extends State<OnboardingScreen> {
+class _GuideScreenState extends State<GuideScreen> {
   final int _numPages = 3;
   final PageController _pageController = PageController(initialPage: 0);
   int _currentPage = 0;
@@ -59,52 +59,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         body: Container(
           decoration: BoxDecoration(
             color: Theme.of(context).scaffoldBackgroundColor,
-            // gradient: LinearGradient(
-            //   begin: Alignment.topCenter,
-            //   end: Alignment.bottomCenter,
-            //   stops: [0.1, 0.4, 0.7, 0.9],
-            //   colors: [
-            //     Color(0xFF322c42),
-            //     Color(0xFF30293c),
-            //     Color(0xff6c005a),
-            //     Color(0xFF5b074a),
-            //   ],
-            // ),
+       
           ),
           child: SafeArea(
             child: Padding(
               padding: EdgeInsets.symmetric(vertical: 5.0, horizontal: 8),
               child: ListView(
                 children: <Widget>[
-                  Container(
-                    padding: EdgeInsets.only(top: 5),
-                    alignment: Alignment.centerRight,
-                    child: _currentPage != _numPages - 1
-                        ? ElevatedButton(
-                            onPressed: () {
-                              _pageController.animateToPage(3,
-                                  duration: Duration(milliseconds: 300),
-                                  curve: Curves.bounceIn);
-                              setState(() {
-                                _currentPage = 3;
-                              });
-                            },
-                            style: ElevatedButton.styleFrom(
-                              padding: EdgeInsets.all(15),
-                              primary: Theme.of(context).primaryColor,
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20)),
-                            ),
-                            child: Text(
-                              'Skip',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 18.0,
-                              ),
-                            ),
-                          )
-                        : null,
-                  ),
+                  SizedBox(height:20),
                   Container(
                     height: MediaQuery.of(context).size.height * 0.7,
                     child: PageView(
