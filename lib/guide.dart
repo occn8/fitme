@@ -59,14 +59,13 @@ class _GuideScreenState extends State<GuideScreen> {
         body: Container(
           decoration: BoxDecoration(
             color: Theme.of(context).scaffoldBackgroundColor,
-       
           ),
           child: SafeArea(
             child: Padding(
               padding: EdgeInsets.symmetric(vertical: 5.0, horizontal: 8),
               child: ListView(
                 children: <Widget>[
-                  SizedBox(height:20),
+                  SizedBox(height: 20),
                   Container(
                     height: MediaQuery.of(context).size.height * 0.7,
                     child: PageView(
@@ -98,7 +97,7 @@ class _GuideScreenState extends State<GuideScreen> {
                               ),
                               SizedBox(height: 15.0),
                               Text(
-                                'Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod tempor incididunt ut labore et.',
+                                'A healthy life means happiness, health of both mind and body',
                                 style: subtitleTextStyle(context),
                               ),
                             ],
@@ -119,12 +118,12 @@ class _GuideScreenState extends State<GuideScreen> {
                               ),
                               SizedBox(height: 10.0),
                               Text(
-                                'Track Your fitness \nwith us',
+                                'Have Your fitness in check\nwith us',
                                 style: titleTextStyle(context),
                               ),
                               SizedBox(height: 8.0),
                               Text(
-                                'Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod tempor incididunt ut labore et.',
+                                'Perform all the neccesary routines to keep your self at perfect shape and health',
                                 style: subtitleTextStyle(context),
                               ),
                             ],
@@ -145,12 +144,12 @@ class _GuideScreenState extends State<GuideScreen> {
                               ),
                               SizedBox(height: 10.0),
                               Text(
-                                'Train with the Best',
+                                'Train with the Best routine',
                                 style: titleTextStyle(context),
                               ),
                               SizedBox(height: 8.0),
                               Text(
-                                'Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod tempor incididunt ut labore et.',
+                                'All content availed to you is well researched and will give you the fitness and health level you need',
                                 style: subtitleTextStyle(context),
                               ),
                             ],

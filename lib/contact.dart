@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class Contacts extends StatelessWidget {
@@ -28,7 +27,10 @@ class Contacts extends StatelessWidget {
               SizedBox(height: 10),
               CircleAvatar(
                 radius: 53,
-                child: Image.asset('assets/icon.png',height: 100,),
+                child: Image.asset(
+                  'assets/icon.png',
+                  height: 100,
+                ),
               ),
               SizedBox(height: 10),
               Container(
@@ -37,7 +39,7 @@ class Contacts extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text('Agmedical is a Health Application that provides storage for medical Documents and Emergency Information'),
+                    Text('FitMe Team Contact Details available right below For help and support regarding Fitness and Nutrition'),
                     Center(
                       child: Container(
                         padding: EdgeInsets.all(5),
@@ -56,14 +58,6 @@ class Contacts extends StatelessWidget {
                     SizedBox(height: 10),
                     Text('PO Box 26004', style: abtStyle),
                     Text('Kampala - Uganda', style: abtStyle),
-                  ],
-                ),
-              ),
-              SizedBox(height: 10),
-              Container(
-                padding: EdgeInsets.all(5),
-                child: Column(
-                  children: [
                     Center(
                       child: Container(
                         padding: EdgeInsets.all(5),
@@ -79,14 +73,6 @@ class Contacts extends StatelessWidget {
                     SizedBox(height: 10),
                     Text('410 Steve Biko Road', style: abtStyle),
                     Text('Kampala - Uganda', style: abtStyle),
-                  ],
-                ),
-              ),
-              SizedBox(height: 10),
-              Container(
-                padding: EdgeInsets.all(5),
-                child: Column(
-                  children: [
                     Center(
                       child: Container(
                         padding: EdgeInsets.all(5),
@@ -102,14 +88,6 @@ class Contacts extends StatelessWidget {
                     SizedBox(height: 10),
                     Text('Mondays to Fridays', style: abtStyle),
                     Text('08:00 to 15:00', style: abtStyle),
-                  ],
-                ),
-              ),
-              SizedBox(height: 10),
-              Container(
-                padding: EdgeInsets.all(5),
-                child: Column(
-                  children: [
                     Center(
                       child: Container(
                         padding: EdgeInsets.all(5),
@@ -129,6 +107,7 @@ class Contacts extends StatelessWidget {
                   ],
                 ),
               ),
+              SizedBox(height: 10),
             ],
           ),
         ),

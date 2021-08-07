@@ -11,14 +11,16 @@ class _NutritionState extends State<Nutrition> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Nutritius Foods'),centerTitle: true,),
+      appBar: AppBar(
+        title: Text('Nutritius Foods'),
+        centerTitle: true,
+      ),
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 8, vertical: 5),
         child: ListView.builder(
             itemCount: nutriList.length,
             scrollDirection: Axis.vertical,
             itemBuilder: (BuildContext context, int index) {
-
               NutriModel nutri = nutriList[index];
               return Container(
                 padding: EdgeInsets.all(5),
@@ -35,7 +37,7 @@ class _NutritionState extends State<Nutrition> {
                             color: Theme.of(context).primaryColor,
                           ),
                         ),
-                        SizedBox(height:8),
+                        SizedBox(height: 8),
                         Text(
                           '${nutri.description}',
                           style: TextStyle(
@@ -155,4 +157,84 @@ List<NutriModel> nutriList = [
       name: 'Shellfish',
       description:
           'Shellfish ranks similarly to organ meats when it comes to nutrient density. Edible shellfish include clams, mollusks, and oysters.'),
+  NutriModel(
+      name: 'Brown rice',
+      description:
+          'Rice is one of the most popular cereal grains and is currently a staple food for more than half of the world’s population. Brown rice is fairly nutritious, with a decent amount of fiber, vitamin B1, and magnesium.'),
+  NutriModel(
+      name: 'Oats',
+      description:
+          'Oats are incredibly healthy. They are loaded with nutrients and powerful fibers called beta glucans, which provide numerous benefits.'),
+  NutriModel(
+      name: 'Quinoa',
+      description:
+          'Quinoa has become incredibly popular among health-conscious individuals in recent years. It’s a tasty grain that’s high in nutrients, such as fiber and magnesium. It is also an excellent source of plant-based protein.'),
+  NutriModel(
+      name: 'Ezekiel bread',
+      description:
+          'Ezekiel bread may be the healthiest bread you can buy. It’s made from organic, sprouted whole grains, as well as several legumes.'),
+  NutriModel(
+      name: 'Green beans',
+      description:
+          'Green beans, also called string beans, are unripe varieties of the common bean. They are very popular in Western countries.'),
+  NutriModel(
+      name: 'Kidney beans',
+      description:
+          'Kidney beans are loaded with fiber and various vitamins and minerals. Make sure to cook them properly, as they’re toxic when raw.'),
+  NutriModel(
+      name: 'Peanuts',
+      description:
+          'Peanuts (which are legumes, not a true nuts) are incredibly tasty and high in nutrients and antioxidants. Several studies suggest that peanuts can help you lose weight.\n However, take it easy on the peanut butter, as it’s very high in calories and easy to overeat.'),
+  NutriModel(
+      name: 'Whole milk',
+      description:
+          'Whole milk is very high in vitamins, minerals, quality animal protein, and healthy fats. What’s more, it’s one of the best dietary sources of calcium.'),
+  NutriModel(
+      name: 'Yogurt',
+      description:
+          'Yogurt is made from milk that’s fermented by adding live bacteria to it. It has many of the same health effects as milk, but yogurt with live cultures has the added benefit of friendly probiotic bacteria.'),
+  NutriModel(
+      name: 'Cheese',
+      description:
+          'Cheese is incredibly nutritious, as a single slice may offer about the same amount of nutrients as an entire cup (240 ml) of milk. For many, it’s also one of the most delicious foods you can eat.'),
+  NutriModel(
+      name: 'Coconut oil',
+      description:
+          'Coconut oil contains relatively high amounts of MCTs, may aid Alzheimer’s disease, and has been shown to help you lose belly fat'),
+  NutriModel(
+      name: 'Extra virgin olive oil',
+      description:
+          'Extra virgin olive oil is one of the healthiest vegetable oils you can find. It contains heart-healthy monounsaturated fats and is very high in antioxidants with powerful health benefits.'),
+  NutriModel(
+      name: 'Potatoes',
+      description:
+          'Potatoes are loaded with potassium and contain a little bit of almost every nutrient you need, including vitamin C.\n They’ll also keep you full for long periods. One study analyzed 38 foods and found that boiled potatoes were by far the most filling'),
+  NutriModel(
+      name: 'Sweet potatoes',
+      description:
+          'Sweet potatoes are among the most delicious starchy foods you can eat. They’re loaded with antioxidants and all sorts of healthy nutrients.'),
+  NutriModel(
+      name: 'Dark chocolate',
+      description:
+          'Dark chocolate is loaded with magnesium and serves as one of the planet’s most powerful sources of antioxidants'),
+  NutriModel(
+      name: 'Apple cider vinegar',
+      description:
+          'Apple cider vinegar is incredibly popular in the natural health community. Studies show that it can help lower blood sugar levels and cause modest weight loss.\nIt’s great to use as a salad dressing or to add flavor to meals.'),
+  NutriModel(
+      name: 'Lentils',
+      description:
+          'Lentils are another popular legume. They’re high in fiber and among the best sources of plant-based protein.'),
+  NutriModel(
+      name: 'Tuna',
+      description:
+          'Tuna is very popular in Western countries and tends to be low in fat and calories while high in protein. It’s perfect for people who need to add more protein to their diets but keep calories low.'),
+  NutriModel(
+      name: 'Homemade low-carb breads',
+      description:
+          'Overall, the best choice for bread may be that which you can make yourself. Here’s a list of 15 recipes for gluten-free, low-carb breads.'),
+  NutriModel(
+      name: 'Shrimp',
+      description:
+          'Shrimp is a type of crustacean related to crabs and lobsters. It tends to be low in fat and calories but high in protein. It’s also loaded with various other nutrients, including selenium and vitamin B12.'),
 ];
