@@ -16,6 +16,34 @@ class _SettingsState extends State<Settings> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: Builder(
+          builder: (context) => InkWell(
+            splashColor: Theme.of(context).accentColor,
+            borderRadius: BorderRadius.circular(10),
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: Container(
+              padding: new EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                  // color: Theme.of(context).cardColor,
+                  borderRadius: BorderRadius.circular(10)),
+              child: new Icon(Icons.arrow_back_ios_outlined,
+                  size: 25, color: Colors.white),
+            ),
+          ),
+        ),
+        title: Text(
+          'Settings',
+          style: TextStyle(
+              fontSize: 22,
+              color: Colors.white,
+              fontWeight: FontWeight.w800),
+        ),
+        // backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        centerTitle: true,
+      ),
       body: Container(
         padding: EdgeInsets.all(5),
         child: ListView(
@@ -25,28 +53,6 @@ class _SettingsState extends State<Settings> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Builder(
-                    builder: (context) => InkWell(
-                      splashColor: Theme.of(context).accentColor,
-                      borderRadius: BorderRadius.circular(10),
-                      onTap: () {
-                        Navigator.pop(context);
-                      },
-                      child: Container(
-                        padding: new EdgeInsets.all(8),
-                        decoration: BoxDecoration(
-                            color: Theme.of(context).cardColor,
-                            borderRadius: BorderRadius.circular(10)),
-                        child: new Icon(Icons.arrow_back_ios_outlined,
-                            size: 25,
-                            color: Theme.of(context).primaryColorDark),
-                      ),
-                    ),
-                  ),
-                  Text(
-                    'Settings',
-                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.w800),
-                  ),
                   SizedBox(width: 10),
                 ],
               ),

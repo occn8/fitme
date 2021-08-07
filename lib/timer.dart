@@ -1,4 +1,5 @@
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
+import 'package:fitme/settings.dart';
 import 'package:flutter/material.dart';
 
 class Timer extends StatefulWidget {
@@ -15,6 +16,51 @@ class _TimerState extends State<Timer> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: Builder(
+          builder: (context) => InkWell(
+            splashColor: Theme.of(context).accentColor,
+            borderRadius: BorderRadius.circular(10),
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: Container(
+              padding: new EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                  // color: Theme.of(context).cardColor,
+                  borderRadius: BorderRadius.circular(10)),
+              child: new Icon(Icons.arrow_back_ios_outlined,
+                  size: 25, color: Colors.white),
+            ),
+          ),
+        ),
+        title: Text(
+          'Timer',
+          style: TextStyle(
+              fontSize: 22, color: Colors.white, fontWeight: FontWeight.w800),
+        ),
+        actions: [
+          Builder(
+            builder: (context) => InkWell(
+              splashColor: Theme.of(context).accentColor,
+              borderRadius: BorderRadius.circular(10),
+              onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (ctx) => Settings()));
+              },
+              child: Container(
+                padding: new EdgeInsets.all(15),
+                decoration: BoxDecoration(
+                    // color: Theme.of(context).cardColor,
+                    borderRadius: BorderRadius.circular(10)),
+                child: new Icon(Icons.settings, size: 30, color: Colors.white),
+              ),
+            ),
+          ),
+        ],
+        // backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        centerTitle: true,
+      ),
       body: SafeArea(
         child: Column(
           children: [
@@ -22,31 +68,7 @@ class _TimerState extends State<Timer> {
               padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Builder(
-                    builder: (context) => InkWell(
-                      splashColor: Theme.of(context).accentColor,
-                      borderRadius: BorderRadius.circular(10),
-                      onTap: () {
-                        Navigator.pop(context);
-                      },
-                      child: Container(
-                        padding: new EdgeInsets.all(8),
-                        decoration: BoxDecoration(
-                            color: Theme.of(context).cardColor,
-                            borderRadius: BorderRadius.circular(10)),
-                        child: new Icon(Icons.arrow_back_ios_outlined,
-                            size: 25,
-                            color: Theme.of(context).primaryColorDark),
-                      ),
-                    ),
-                  ),
-                  Text(
-                    'Timer',
-                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.w800),
-                  ),
-                  SizedBox(width: 10)
-                ],
+                children: [SizedBox(width: 10)],
               ),
             ),
             Center(
@@ -106,7 +128,10 @@ class _TimerState extends State<Timer> {
                           children: [
                             Text('Reduce '),
                             Icon(Icons.remove),
-                            Text('10',style: style1,),
+                            Text(
+                              '10',
+                              style: style1,
+                            ),
                           ],
                         ),
                         style: ElevatedButton.styleFrom(
@@ -123,7 +148,10 @@ class _TimerState extends State<Timer> {
                           children: [
                             Text('Add '),
                             Icon(Icons.add),
-                            Text('10',style: style1,),
+                            Text(
+                              '10',
+                              style: style1,
+                            ),
                           ],
                         ),
                         style: ElevatedButton.styleFrom(

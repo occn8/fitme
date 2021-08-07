@@ -37,27 +37,12 @@ class _HomeState extends State<Home> {
                     // color: Theme.of(context).cardColor,
                     borderRadius: BorderRadius.circular(10)),
                 child: new Icon(Icons.fastfood,
-                    size: 30, color: Theme.of(context).primaryColor),
+                    size: 30, color: Colors.white),
               ),
             ),
           ),
-          title: RichText(
-            text: TextSpan(
-                children: [
-                  TextSpan(
-                      text: 'Fit',
-                      style: TextStyle(
-                          fontSize: 35,
-                          fontWeight: FontWeight.w800,
-                          color: Colors.orange[800])),
-                  TextSpan(text: 'Me '),
-                ],
-                style: TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.blueGrey)),
-          ),
-          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+          title: FitMeText(),
+          // backgroundColor: Theme.of(context).scaffoldBackgroundColor,
           centerTitle: true,
           actions: [
             Builder(
@@ -74,7 +59,7 @@ class _HomeState extends State<Home> {
                       // color: Theme.of(context).cardColor,
                       borderRadius: BorderRadius.circular(10)),
                   child: new Icon(Icons.timer,
-                      size: 30, color: Theme.of(context).primaryColor),
+                      size: 30, color: Colors.white),
                 ),
               ),
             ),
@@ -92,7 +77,7 @@ class _HomeState extends State<Home> {
                       // color: Theme.of(context).cardColor,
                       borderRadius: BorderRadius.circular(10)),
                   child: new Icon(Icons.settings,
-                      size: 30, color: Theme.of(context).primaryColor),
+                      size: 30, color: Colors.white),
                 ),
               ),
             ),
@@ -115,6 +100,32 @@ class _HomeState extends State<Home> {
               }),
         ),
       ),
+    );
+  }
+}
+
+class FitMeText extends StatelessWidget {
+  const FitMeText({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return RichText(
+      text: TextSpan(
+          children: [
+            TextSpan(
+                text: 'Fit',
+                style: TextStyle(
+                    fontSize: 35,
+                    fontWeight: FontWeight.w800,
+                    color: Colors.orange[800])),
+            TextSpan(text: 'Me '),
+          ],
+          style: TextStyle(
+              fontSize: 30,
+              fontWeight: FontWeight.w500,
+              color: Colors.grey)),
     );
   }
 }
