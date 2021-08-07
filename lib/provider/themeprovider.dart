@@ -83,7 +83,7 @@ Future<String?> themer(BuildContext context) {
                                 : Icon(Icons.radio_button_unchecked),
                             SizedBox(width: 10),
                             Text(
-                              enumName(theme),
+                              enumName(theme)+' Theme',
                               style: TextStyle(
                                   fontSize: 18,
                                   fontWeight: FontWeight.w500,

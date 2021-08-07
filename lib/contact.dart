@@ -1,3 +1,4 @@
+import 'package:fitme/home.dart';
 import 'package:flutter/material.dart';
 
 class Contacts extends StatelessWidget {
@@ -6,7 +7,7 @@ class Contacts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     TextStyle abtTStyle = TextStyle(
-      fontSize: 18,
+      fontSize: 20,
       color: Theme.of(context).primaryColor,
       fontWeight: FontWeight.w500,
     );
@@ -32,78 +33,79 @@ class Contacts extends StatelessWidget {
                   height: 100,
                 ),
               ),
-              SizedBox(height: 10),
+              SizedBox(height: 40),
               Container(
-                padding: EdgeInsets.all(5),
+                padding: EdgeInsets.all(10),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text('FitMe Team Contact Details available right below For help and support regarding Fitness and Nutrition'),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Contacts for ',
+                          style: abtTStyle,
+                        ),
+                        FitMeText()
+                      ],
+                    ),
+                    SizedBox(height: 40),
+                    Text(
+                        'FitMe Team Contact Details available right below For help and support regarding Fitness and Nutrition'),
+                    SizedBox(height: 40),
                     Center(
                       child: Container(
                         padding: EdgeInsets.all(5),
-                        width: 120,
                         child: Row(
                           children: [
                             Icon(Icons.location_on),
-                            Text(
-                              ' Postal Address',
-                              style: abtTStyle,
-                            ),
+                            SizedBox(width: 10),
+                            Text('P.O Box 994 Kampala - Uganda',
+                                style: abtStyle),
                           ],
                         ),
                       ),
                     ),
                     SizedBox(height: 10),
-                    Text('PO Box 26004', style: abtStyle),
-                    Text('Kampala - Uganda', style: abtStyle),
                     Center(
                       child: Container(
                         padding: EdgeInsets.all(5),
-                        width: 100,
                         child: Row(
                           children: [
-                            Icon(Icons.location_on),
-                            Text(' Street Address', style: abtTStyle),
+                            Icon(Icons.phone),
+                            SizedBox(width: 10),
+                            Text('Phone:+256 550 555 555', style: abtStyle),
                           ],
                         ),
                       ),
                     ),
                     SizedBox(height: 10),
-                    Text('410 Steve Biko Road', style: abtStyle),
-                    Text('Kampala - Uganda', style: abtStyle),
                     Center(
                       child: Container(
                         padding: EdgeInsets.all(5),
-                        width: 100,
                         child: Row(
                           children: [
-                            Icon(Icons.alarm),
-                            Text(' Visit us', style: abtTStyle),
+                            Icon(Icons.email),
+                            SizedBox(width: 10),
+                            Text('Email: fitme@fit.com', style: abtStyle),
                           ],
                         ),
                       ),
                     ),
                     SizedBox(height: 10),
-                    Text('Mondays to Fridays', style: abtStyle),
-                    Text('08:00 to 15:00', style: abtStyle),
                     Center(
                       child: Container(
                         padding: EdgeInsets.all(5),
-                        width: 120,
                         child: Row(
                           children: [
                             Icon(Icons.cloud),
-                            Text(' Other Contacts', style: abtTStyle),
+                            SizedBox(width: 10),
+                            Text('Web: www.fitme.fit.com', style: abtStyle),
                           ],
                         ),
                       ),
                     ),
-                    SizedBox(height: 10),
-                    Text('Phone:+256 020 004 009', style: abtStyle),
-                    Text('Web: www.agmedical.med.com', style: abtStyle),
-                    Text('Twitter: agmedical', style: abtStyle),
                   ],
                 ),
               ),
