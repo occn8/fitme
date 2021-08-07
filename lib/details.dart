@@ -36,7 +36,7 @@ class Details extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    'Detail',
+                    'Workout Detail',
                     style: TextStyle(fontSize: 22, fontWeight: FontWeight.w800),
                   ),
                   Builder(
@@ -61,6 +61,7 @@ class Details extends StatelessWidget {
                 ],
               ),
             ),
+            SizedBox(height:10),
             Container(
               height: MediaQuery.of(context).size.height * 0.4,
               width: MediaQuery.of(context).size.width * 1,

@@ -25,14 +25,11 @@ class Contacts extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: ListView(
             children: [
-              SizedBox(height: 10),
+              SizedBox(height: 20),
               CircleAvatar(
-                radius: 53,
-                child: Image.asset(
-                  'assets/icon.png',
-                  height: 100,
-                ),
-              ),
+              radius: 50,
+              child: Image.asset('assets/icon.png'),
+            ),
               SizedBox(height: 40),
               Container(
                 padding: EdgeInsets.all(10),
