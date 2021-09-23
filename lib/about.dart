@@ -48,7 +48,7 @@ class About extends StatelessWidget {
                     ),
                     SizedBox(height: 10),
                     Text(
-                      '''We were founded in 2021 by CEO Kizito Walter, To despense information reguarding health physically through proper workout routines and nutrition''',
+                      '''We were founded in 2021 by ..., To despense information reguarding health physically through proper workout routines and nutrition''',
                       style: abtStyle,
                     ),
                   ],
